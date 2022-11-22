@@ -1,0 +1,32 @@
+input {
+    display: block;
+}
+
+
+.default-post-image{ 
+    display: block; 
+    height: 210px; 
+    width: 40%; 
+    /* margin: 0px auto;  */
+    border-radius: 50%; 
+}
+
+.image-placeholder {
+    width: 60%;
+    color: white;
+    height: 100%;
+    background: black;
+    opacity: .7;
+    height: 210px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+
+  .img-div:hover .image-placeholder{
+    display: block;
+    cursor:pointer;
+  }

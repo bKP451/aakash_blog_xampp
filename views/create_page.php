@@ -4,7 +4,7 @@ include('../server.php') ?>
 <html>
 <head>
 	<title>POST A POST ARTICLE AAKASH</title>
-    <link rel="stylesheet" type="text/css" href="/./../decoration/create_page.css">
+    <link rel="stylesheet" type="text/css" href="/./../high_explorer_com/decoration/create_page.css">
 </head>
 <body>
 	
@@ -31,7 +31,7 @@ include('../server.php') ?>
 		  <div class="image-placeholder" onclick="triggerClick()">
 		     <h4>Update Article Image</h4>
 		</div>
-		 <img src="/../post-images/Mausoleum_of_Omar_Khayyam.jpg" class="default-post-image" onclick="triggerClick()">
+		 <img src="/./../high_explorer_com/post-images/Mausoleum_of_Omar_Khayyam.jpg" class="default-post-image" onclick="triggerClick()">
 		</span>
 		<input type="file" name="articleImage" onChange="displayImage(this)" id="articleImage" style="display:none;">
 	</div>

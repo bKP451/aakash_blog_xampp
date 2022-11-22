@@ -12,7 +12,7 @@ include('../server.php') ?>
 
     <h1>Upload a new ARTICLE !! </h1>
 	<hr>
-	<form method="post" action="/../server.php" enctype="multipart/form-data">
+	<form method="post" action="/../high_explorer_com/server.php" enctype="multipart/form-data">
 		<!-- When updating, the values should be filled with the previous articles !! -->
 
 	<div class="input-group">
@@ -31,7 +31,14 @@ include('../server.php') ?>
 		  <div class="image-placeholder" onclick="triggerClick()">
 		     <h4>Update Article Image</h4>
 		</div>
-		 <img src="/./../high_explorer_com/post-images/Mausoleum_of_Omar_Khayyam.jpg" class="default-post-image" onclick="triggerClick()">
+		<?php if($update == TRUE) 
+		{
+			$image_path = $article_image_filename;
+		} else {
+			$image_path = 'Mausoleum_of_Omar_Khayyam.jpg';
+			}
+		?>
+		 <img src="/./../high_explorer_com/post-images/<?php echo $image_path ?>" class="default-post-image" onclick="triggerClick()">
 		</span>
 		<input type="file" name="articleImage" onChange="displayImage(this)" id="articleImage" style="display:none;">
 	</div>
@@ -61,6 +68,8 @@ include('../server.php') ?>
 		?>
     <?php } ?>
 	<!-- <script type="text/javascript" src="/../javascripts-files/post-image-handling.js"> -->
+		
+		
 		<script>
 			function triggerClick(e) {
   						document.querySelector('#articleImage').click();

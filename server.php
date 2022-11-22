@@ -14,6 +14,7 @@ if($specified_article_exec == TRUE){
     $old_article = $specified_article_exec->fetch_array(MYSQLI_ASSOC);
     $article_heading = $old_article["post_title"];
     $article_body = $old_article["post_body"];
+    $article_image_filename = $old_article["article_image_name"];
 }
 
 
@@ -109,11 +110,15 @@ $status = 'error';
             $_SESSION["error"] = "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.";
         } 
     }else{ 
-        $_SESSION["error"] = 'Please select an image file to upload.'; 
+        $_SESSION["message"] = 'You can skip the image upload [will upload default image]'; 
     } 
 
     // If there is no error, then execute the sql
     if(!isset($_SESSION["error"])){
+        // Default image for the articles 
+        if(empty($fileName)){
+            $fileName = 'Mausoleum_of_Omar_Khayyam.jpg';
+        }
         $create_article_query = "INSERT INTO ARTICLES (post_title, post_body,article_image_name) VALUES ('$post_title', '$post_body', '$fileName')";
         $h = $conn->query($create_article_query);
         

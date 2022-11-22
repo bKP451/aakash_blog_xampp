@@ -20,6 +20,7 @@ if(isset($_GET['article_id'])){
         <title><?php echo $current_article["post_title"]; ?></title>
     </head>
     <body>
+        <img src='/./../high_explorer_com/post-images/<?php echo $current_article["article_image_name"]; ?>'>
         <h1><?php echo $current_article["post_title"]; ?></h1>
         <hr>
         <p>

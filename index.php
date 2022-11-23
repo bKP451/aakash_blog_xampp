@@ -47,7 +47,7 @@
   <h1><?php echo $article->post_title; ?></h1>
   <div>
     <p class="para_text"><?php echo ((strlen($article->post_body)>100) ? (substr($article->post_body, 0,100)):($article->post_body)) ?>
-    <a href="/./views/article_page.php?article_id=<?php echo $article->post_id; ?>">...Read more</a>
+    <a href="/./high_explorer_com/views/article_page.php?article_id=<?php echo $article->post_id; ?>">...Read more</a>
     </p>
   </div>
     </section>    

@@ -4,7 +4,7 @@ include('../server.php') ?>
 <html>
 <head>
 	<title>POST A POST ARTICLE AAKASH</title>
-    <link rel="stylesheet" type="text/css" href="/./../decoration/create_page.css">
+    <link rel="stylesheet" type="text/css" href="/./../high_explorer_com/decoration/create_page.css">
 </head>
 <body>
 	
@@ -12,7 +12,7 @@ include('../server.php') ?>
 
     <h1>Upload a new ARTICLE !! </h1>
 	<hr>
-	<form method="post" action="/../server.php" enctype="multipart/form-data">
+	<form method="post" action="/../high_explorer_com/server.php" enctype="multipart/form-data">
 		<!-- When updating, the values should be filled with the previous articles !! -->
 
 	<div class="input-group">
@@ -31,7 +31,14 @@ include('../server.php') ?>
 		  <div class="image-placeholder" onclick="triggerClick()">
 		     <h4>Update Article Image</h4>
 		</div>
-		 <img src="/../post-images/Mausoleum_of_Omar_Khayyam.jpg" class="default-post-image" onclick="triggerClick()">
+		<?php if($update == TRUE) 
+		{
+			$image_path = $article_image_filename;
+		} else {
+			$image_path = 'Mausoleum_of_Omar_Khayyam.jpg';
+			}
+		?>
+		 <img src="/./../high_explorer_com/post-images/<?php echo $image_path ?>" class="default-post-image" onclick="triggerClick()">
 		</span>
 		<input type="file" name="articleImage" onChange="displayImage(this)" id="articleImage" style="display:none;">
 	</div>
@@ -40,6 +47,8 @@ include('../server.php') ?>
 			<?php if ($update == TRUE) { ?>
 				<!-- This is for holding the id of the article -->
 				<input type = "hidden" name="post_id" value="<?php echo $id; ?>">
+				<!-- Now let add a next input button which will hold the image-name -->
+				<input type = "hidden" name="image_file_name" value="<?php echo $image_path; ?>">
 				<button class="btn" type="submit" name="update" >Update</button>
 			<?php } else { ?>
 				<button class="btn" type="submit" name="upload" >Save</button>
@@ -61,6 +70,8 @@ include('../server.php') ?>
 		?>
     <?php } ?>
 	<!-- <script type="text/javascript" src="/../javascripts-files/post-image-handling.js"> -->
+		
+		
 		<script>
 			function triggerClick(e) {
   						document.querySelector('#articleImage').click();

@@ -47,6 +47,8 @@ include('../server.php') ?>
 			<?php if ($update == TRUE) { ?>
 				<!-- This is for holding the id of the article -->
 				<input type = "hidden" name="post_id" value="<?php echo $id; ?>">
+				<!-- Now let add a next input button which will hold the image-name -->
+				<input type = "hidden" name="image_file_name" value="<?php echo $image_path; ?>">
 				<button class="btn" type="submit" name="update" >Update</button>
 			<?php } else { ?>
 				<button class="btn" type="submit" name="upload" >Save</button>

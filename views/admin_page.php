@@ -54,14 +54,14 @@ session_start();
        <?php } ?>
    <?php }else { ?>
         <h2>SORRY !! IT SEEMS YOU ARE NOT THE ADMIN</h2><br>
-        <p>View Aakash blog at <a href='/../index.php'>high-explorer</a></p>
+        <p>View Aakash blog at <a href='/../high_explorer_com/index.php'>high-explorer</a></p>
   <?php  }  ?>
   <script>
     function delete_confirmation(article_title, article_id){
         if (confirm(`Do you want to delete an article titled "${article_title}" ?`)){
             console.log("You really want me to delete !!");
             console.log(article_id);
-            location.replace(`/./../server.php?del=${article_id}`);
+            location.replace(`/./../high_explorer_com/server.php?del=${article_id}`);
         } else {
             console.log("You ought to keep me !!");
         }

@@ -1,0 +1,26 @@
+#comment_credentials {
+    display: none;
+}
+
+#comment_input_box {
+    width: 45%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    height: 50px;
+}
+
+
+#comment_credentials input {
+    display: block;
+    width: 30%;
+    margin: 10px 0;
+    height: 35px;
+}
+
+
+
+
+
+
+
+

@@ -17,6 +17,7 @@ if(isset($_GET['article_id'])){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href='/../high_explorer_com/decoration/article_page.css'>
         <title><?php echo $current_article["post_title"]; ?></title>
     </head>
     <body>
@@ -26,6 +27,7 @@ if(isset($_GET['article_id'])){
         <p>
             <?php echo $current_article["post_body"]; ?>
         </p>
+        <?php include 'comment_box.php'; ?>
     </body>
     </html>
    <?php } else { ?>

@@ -17,6 +17,17 @@
     height: 35px;
 }
 
+.paint_placeholder_red::-webkit-input-placeholder {
+    color: #FF5858;
+ }
+
+
+ #comment_credentials input:focus::placeholder {
+    color: transparent;
+  }
+
+
+
 
 
 

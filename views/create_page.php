@@ -83,10 +83,10 @@ include('../server.php') ?>
     var reader = new FileReader();
     reader.onload = function(e){
       document.querySelector('.default-post-image').setAttribute('src', e.target.result);
-    }
+               }
     reader.readAsDataURL(e.files[0]);
-  }
-}
+        }
+        }
 			</script>
 
 <?php

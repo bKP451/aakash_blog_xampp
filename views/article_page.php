@@ -18,6 +18,7 @@ if(isset($_GET['article_id'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href='/../high_explorer_com/decoration/article_page.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <title><?php echo $current_article["post_title"]; ?></title>
     </head>
     <body>
@@ -28,9 +29,7 @@ if(isset($_GET['article_id'])){
             <?php echo $current_article["post_body"]; ?>
         </p>
         <?php include 'comment_box.php'; ?>
-    </body>
-    </html>
-   <?php } else { ?>
+        <?php } else { ?>
     <h1>Could not load article from the database !!</h1>
     <?php } ?>
 
@@ -38,6 +37,9 @@ if(isset($_GET['article_id'])){
     <!-- The statements when the page cannot dispaly the article by id -->
     <h2>Error</h2>
     <?php } ?>
+    </body>
+    </html>
+   
     
 
 

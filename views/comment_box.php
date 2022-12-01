@@ -1,4 +1,4 @@
-<form action="./../validation/comment_form_input.php" method="post" onsubmit="return validateCommentForm();">
+<form method="post" id="comment_form" onsubmit="return validateCommentForm();">
 <div id="comment_box_wrapper">
 <h3>Leave a comment </h3> 
 <hr>
@@ -15,7 +15,9 @@ name="article_comment">
 
 </div>
 </form>
-<p><?php echo "I am the comments"; ?></p>
+<div><?php echo "I am the comments section"; ?>
+
+</div>
 
 <script>   
 
@@ -77,13 +79,28 @@ name="article_comment">
         }
         
         if (validateComment && validateFullName && validateEmailAddress) {
-            return true;
-        } else {
+            // Now I got to execute the insert query 
+
+                    var form_data = $('#comment_form').serialize();
+                    $.ajax({
+                    url:"add_comment.php",
+                    method:"POST",
+                    data:form_data,
+                    dataType:"JSON",
+                    success:function(data){
+                        load_comment();
+                    }
+
+        })} else {
             return false;
 
         }
-
+    }
 
         
+    function load_comment(){
+        
     }
+        
+    
     </script>

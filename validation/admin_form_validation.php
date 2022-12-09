@@ -17,10 +17,10 @@ if(isset($_POST['admin-username']) && isset($_POST['admin-password'])){
 $uname = validate($_POST['admin-username']);
 $pass = $_POST['admin-password'];
 if(empty($uname)){
-    header("Location:/../views/login_page.php?error=Username is required");
+    header("Location:/../high_explorer_com/views/login_page.php?error=Username is required");
     exit();
 } elseif(empty($pass)){
-    header("Location:/../views/login_page.php?error=Password is required");
+    header("Location:/../high_explorer_com/views/login_page.php?error=Password is required");
     exit();
 }else {
     $sql = "SELECT * FROM aakash_admin WHERE username='$uname'";
@@ -36,7 +36,7 @@ if(empty($uname)){
         echo "Logged in !!!";
         exit();
     } else {
-        header("Location:/../views/login_page.php?error=Invalid username or password");
+        header("Location:/../high_explorer_com/views/login_page.php?error=Invalid username or password");
         exit();
     }
 }
